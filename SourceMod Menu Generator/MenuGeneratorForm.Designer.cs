@@ -31,24 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.typeComboBox = new System.Windows.Forms.ComboBox();
             this.menuStyleLabel = new System.Windows.Forms.Label();
-            this.menuSettingsGroupBox = new System.Windows.Forms.GroupBox();
-            this.overrideStyleCheckBox = new System.Windows.Forms.CheckBox();
-            this.selectCheckBox = new System.Windows.Forms.CheckBox();
-            this.displayCheckBox = new System.Windows.Forms.CheckBox();
-            this.startCheckBox = new System.Windows.Forms.CheckBox();
-            this.closeHandleCheckBox = new System.Windows.Forms.CheckBox();
-            this.endCheckBox = new System.Windows.Forms.CheckBox();
-            this.titleCheckBox = new System.Windows.Forms.CheckBox();
             this.paginationCheckBox = new System.Windows.Forms.CheckBox();
-            this.cancelCheckBox = new System.Windows.Forms.CheckBox();
             this.translationCheckBox = new System.Windows.Forms.CheckBox();
-            this.submenuCheckBox = new System.Windows.Forms.CheckBox();
-            this.menuInfoGroupBox = new System.Windows.Forms.GroupBox();
-            this.menuHandlerTextBox = new System.Windows.Forms.TextBox();
-            this.menuHandlerLabel = new System.Windows.Forms.Label();
-            this.menuNameTextBox = new System.Windows.Forms.TextBox();
-            this.menuNameLabel = new System.Windows.Forms.Label();
-            this.menuItemsGroupBox = new System.Windows.Forms.GroupBox();
             this.downButton = new System.Windows.Forms.Button();
             this.upButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
@@ -60,11 +44,52 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.generateButton = new System.Windows.Forms.Button();
-            this.menuSettingsGroupBox.SuspendLayout();
-            this.menuInfoGroupBox.SuspendLayout();
-            this.menuItemsGroupBox.SuspendLayout();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.parentMenuDisplayTextBox = new System.Windows.Forms.TextBox();
+            this.parentMenuLabel = new System.Windows.Forms.Label();
+            this.itemSelectedComboBox = new System.Windows.Forms.ComboBox();
+            this.menuNameGroupBox = new System.Windows.Forms.GroupBox();
+            this.menuNameTextBox = new System.Windows.Forms.TextBox();
+            this.nameTranslationCheckBox = new System.Windows.Forms.CheckBox();
+            this.ItemSelectedLabel = new System.Windows.Forms.Label();
+            this.menuHandlerTextBox = new System.Windows.Forms.TextBox();
+            this.menuHandlerLabel = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.itemTranslationWikiLinkLabel = new System.Windows.Forms.LinkLabel();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.methodNameGroupBox = new System.Windows.Forms.GroupBox();
+            this.methodNameTextBox = new System.Windows.Forms.TextBox();
+            this.methodNameExampleLabel = new System.Windows.Forms.Label();
+            this.accessGroupBox = new System.Windows.Forms.GroupBox();
+            this.accessLevelLinkLabel = new System.Windows.Forms.LinkLabel();
+            this.accessLevelComboBox = new System.Windows.Forms.ComboBox();
+            this.commandDescriptionGroupBox = new System.Windows.Forms.GroupBox();
+            this.commandDescriptionTextBox = new System.Windows.Forms.TextBox();
+            this.commandDescriptionExampleLabel = new System.Windows.Forms.Label();
+            this.commandGroupBox2 = new System.Windows.Forms.GroupBox();
+            this.commandTextBox = new System.Windows.Forms.TextBox();
+            this.commandExampleLabel = new System.Windows.Forms.Label();
+            this.powerlordLinkLabel = new System.Windows.Forms.LinkLabel();
+            this.clipboardButton = new System.Windows.Forms.Button();
+            this.saveButton = new System.Windows.Forms.Button();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.menuTimeGroupBox = new System.Windows.Forms.GroupBox();
+            this.menuTimeTextBox = new System.Windows.Forms.TextBox();
+            this.menuTimeExampleLabel = new System.Windows.Forms.Label();
+            this.pluginCheckBox = new System.Windows.Forms.CheckBox();
             this.codeGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.menuNameGroupBox.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.methodNameGroupBox.SuspendLayout();
+            this.accessGroupBox.SuspendLayout();
+            this.commandDescriptionGroupBox.SuspendLayout();
+            this.commandGroupBox2.SuspendLayout();
+            this.menuTimeGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // typeComboBox
@@ -75,233 +100,49 @@
             "Default",
             "Valve",
             "Radio"});
-            this.typeComboBox.Location = new System.Drawing.Point(72, 19);
+            this.typeComboBox.Location = new System.Drawing.Point(72, 120);
             this.typeComboBox.Name = "typeComboBox";
-            this.typeComboBox.Size = new System.Drawing.Size(199, 21);
+            this.typeComboBox.Size = new System.Drawing.Size(162, 21);
             this.typeComboBox.TabIndex = 1;
             // 
             // menuStyleLabel
             // 
             this.menuStyleLabel.AutoSize = true;
-            this.menuStyleLabel.Location = new System.Drawing.Point(6, 22);
+            this.menuStyleLabel.Location = new System.Drawing.Point(6, 123);
             this.menuStyleLabel.Name = "menuStyleLabel";
             this.menuStyleLabel.Size = new System.Drawing.Size(60, 13);
             this.menuStyleLabel.TabIndex = 0;
             this.menuStyleLabel.Text = "Menu Style";
-            // 
-            // menuSettingsGroupBox
-            // 
-            this.menuSettingsGroupBox.Controls.Add(this.overrideStyleCheckBox);
-            this.menuSettingsGroupBox.Controls.Add(this.selectCheckBox);
-            this.menuSettingsGroupBox.Controls.Add(this.displayCheckBox);
-            this.menuSettingsGroupBox.Controls.Add(this.startCheckBox);
-            this.menuSettingsGroupBox.Controls.Add(this.closeHandleCheckBox);
-            this.menuSettingsGroupBox.Controls.Add(this.endCheckBox);
-            this.menuSettingsGroupBox.Controls.Add(this.titleCheckBox);
-            this.menuSettingsGroupBox.Controls.Add(this.paginationCheckBox);
-            this.menuSettingsGroupBox.Controls.Add(this.cancelCheckBox);
-            this.menuSettingsGroupBox.Controls.Add(this.translationCheckBox);
-            this.menuSettingsGroupBox.Controls.Add(this.submenuCheckBox);
-            this.menuSettingsGroupBox.Controls.Add(this.typeComboBox);
-            this.menuSettingsGroupBox.Controls.Add(this.menuStyleLabel);
-            this.menuSettingsGroupBox.Location = new System.Drawing.Point(12, 115);
-            this.menuSettingsGroupBox.Name = "menuSettingsGroupBox";
-            this.menuSettingsGroupBox.Size = new System.Drawing.Size(277, 185);
-            this.menuSettingsGroupBox.TabIndex = 1;
-            this.menuSettingsGroupBox.TabStop = false;
-            this.menuSettingsGroupBox.Text = "Menu Settings";
-            // 
-            // overrideStyleCheckBox
-            // 
-            this.overrideStyleCheckBox.AutoSize = true;
-            this.overrideStyleCheckBox.Location = new System.Drawing.Point(137, 138);
-            this.overrideStyleCheckBox.Name = "overrideStyleCheckBox";
-            this.overrideStyleCheckBox.Size = new System.Drawing.Size(125, 17);
-            this.overrideStyleCheckBox.TabIndex = 11;
-            this.overrideStyleCheckBox.Text = "Override Draw Styles";
-            this.overrideStyleCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // selectCheckBox
-            // 
-            this.selectCheckBox.AutoSize = true;
-            this.selectCheckBox.Checked = true;
-            this.selectCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.selectCheckBox.Location = new System.Drawing.Point(6, 46);
-            this.selectCheckBox.Name = "selectCheckBox";
-            this.selectCheckBox.Size = new System.Drawing.Size(107, 17);
-            this.selectCheckBox.TabIndex = 2;
-            this.selectCheckBox.Text = "Implement Select";
-            this.selectCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // displayCheckBox
-            // 
-            this.displayCheckBox.AutoSize = true;
-            this.displayCheckBox.Location = new System.Drawing.Point(6, 115);
-            this.displayCheckBox.Name = "displayCheckBox";
-            this.displayCheckBox.Size = new System.Drawing.Size(111, 17);
-            this.displayCheckBox.TabIndex = 8;
-            this.displayCheckBox.Text = "Implement Display";
-            this.displayCheckBox.UseVisualStyleBackColor = true;
-            this.displayCheckBox.CheckedChanged += new System.EventHandler(this.displayCheckBox_CheckedChanged);
-            // 
-            // startCheckBox
-            // 
-            this.startCheckBox.AutoSize = true;
-            this.startCheckBox.Location = new System.Drawing.Point(137, 46);
-            this.startCheckBox.Name = "startCheckBox";
-            this.startCheckBox.Size = new System.Drawing.Size(99, 17);
-            this.startCheckBox.TabIndex = 3;
-            this.startCheckBox.Text = "Implement Start";
-            this.startCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // closeHandleCheckBox
-            // 
-            this.closeHandleCheckBox.AutoSize = true;
-            this.closeHandleCheckBox.Checked = true;
-            this.closeHandleCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.closeHandleCheckBox.Location = new System.Drawing.Point(151, 92);
-            this.closeHandleCheckBox.Name = "closeHandleCheckBox";
-            this.closeHandleCheckBox.Size = new System.Drawing.Size(123, 17);
-            this.closeHandleCheckBox.TabIndex = 7;
-            this.closeHandleCheckBox.Text = "CloseHandle on End";
-            this.closeHandleCheckBox.UseVisualStyleBackColor = true;
-            this.closeHandleCheckBox.CheckedChanged += new System.EventHandler(this.closeHandleCheckBox_CheckedChanged);
-            // 
-            // endCheckBox
-            // 
-            this.endCheckBox.AutoSize = true;
-            this.endCheckBox.Checked = true;
-            this.endCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.endCheckBox.Location = new System.Drawing.Point(137, 69);
-            this.endCheckBox.Name = "endCheckBox";
-            this.endCheckBox.Size = new System.Drawing.Size(96, 17);
-            this.endCheckBox.TabIndex = 6;
-            this.endCheckBox.Text = "Implement End";
-            this.endCheckBox.UseVisualStyleBackColor = true;
-            this.endCheckBox.CheckedChanged += new System.EventHandler(this.endCheckBox_CheckedChanged);
-            // 
-            // titleCheckBox
-            // 
-            this.titleCheckBox.AutoSize = true;
-            this.titleCheckBox.Location = new System.Drawing.Point(25, 138);
-            this.titleCheckBox.Name = "titleCheckBox";
-            this.titleCheckBox.Size = new System.Drawing.Size(101, 17);
-            this.titleCheckBox.TabIndex = 9;
-            this.titleCheckBox.Text = "Title Translation";
-            this.titleCheckBox.UseVisualStyleBackColor = true;
-            this.titleCheckBox.CheckedChanged += new System.EventHandler(this.titleCheckBox_CheckedChanged);
             // 
             // paginationCheckBox
             // 
             this.paginationCheckBox.AutoSize = true;
             this.paginationCheckBox.Checked = true;
             this.paginationCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.paginationCheckBox.Location = new System.Drawing.Point(137, 115);
+            this.paginationCheckBox.Location = new System.Drawing.Point(6, 147);
             this.paginationCheckBox.Name = "paginationCheckBox";
             this.paginationCheckBox.Size = new System.Drawing.Size(104, 17);
             this.paginationCheckBox.TabIndex = 10;
             this.paginationCheckBox.Text = "Paginated Menu";
             this.paginationCheckBox.UseVisualStyleBackColor = true;
             // 
-            // cancelCheckBox
-            // 
-            this.cancelCheckBox.AutoSize = true;
-            this.cancelCheckBox.Location = new System.Drawing.Point(6, 69);
-            this.cancelCheckBox.Name = "cancelCheckBox";
-            this.cancelCheckBox.Size = new System.Drawing.Size(110, 17);
-            this.cancelCheckBox.TabIndex = 4;
-            this.cancelCheckBox.Text = "Implement Cancel";
-            this.cancelCheckBox.UseVisualStyleBackColor = true;
-            this.cancelCheckBox.CheckedChanged += new System.EventHandler(this.cancelCheckBox_CheckedChanged);
-            // 
             // translationCheckBox
             // 
             this.translationCheckBox.AutoSize = true;
             this.translationCheckBox.Checked = true;
             this.translationCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.translationCheckBox.Location = new System.Drawing.Point(6, 161);
+            this.translationCheckBox.Location = new System.Drawing.Point(4, 294);
             this.translationCheckBox.Name = "translationCheckBox";
             this.translationCheckBox.Size = new System.Drawing.Size(101, 17);
             this.translationCheckBox.TabIndex = 12;
             this.translationCheckBox.Text = "Item Translation";
             this.translationCheckBox.UseVisualStyleBackColor = true;
             // 
-            // submenuCheckBox
-            // 
-            this.submenuCheckBox.AutoSize = true;
-            this.submenuCheckBox.Location = new System.Drawing.Point(23, 92);
-            this.submenuCheckBox.Name = "submenuCheckBox";
-            this.submenuCheckBox.Size = new System.Drawing.Size(86, 17);
-            this.submenuCheckBox.TabIndex = 5;
-            this.submenuCheckBox.Text = "Is Sub Menu";
-            this.submenuCheckBox.UseVisualStyleBackColor = true;
-            this.submenuCheckBox.CheckedChanged += new System.EventHandler(this.submenuCheckBox_CheckedChanged);
-            // 
-            // menuInfoGroupBox
-            // 
-            this.menuInfoGroupBox.Controls.Add(this.menuHandlerTextBox);
-            this.menuInfoGroupBox.Controls.Add(this.menuHandlerLabel);
-            this.menuInfoGroupBox.Controls.Add(this.menuNameTextBox);
-            this.menuInfoGroupBox.Controls.Add(this.menuNameLabel);
-            this.menuInfoGroupBox.Location = new System.Drawing.Point(12, 12);
-            this.menuInfoGroupBox.Name = "menuInfoGroupBox";
-            this.menuInfoGroupBox.Size = new System.Drawing.Size(274, 97);
-            this.menuInfoGroupBox.TabIndex = 0;
-            this.menuInfoGroupBox.TabStop = false;
-            this.menuInfoGroupBox.Text = "Menu Information";
-            // 
-            // menuHandlerTextBox
-            // 
-            this.menuHandlerTextBox.Location = new System.Drawing.Point(6, 71);
-            this.menuHandlerTextBox.Name = "menuHandlerTextBox";
-            this.menuHandlerTextBox.Size = new System.Drawing.Size(246, 20);
-            this.menuHandlerTextBox.TabIndex = 3;
-            // 
-            // menuHandlerLabel
-            // 
-            this.menuHandlerLabel.AutoSize = true;
-            this.menuHandlerLabel.Location = new System.Drawing.Point(6, 55);
-            this.menuHandlerLabel.Name = "menuHandlerLabel";
-            this.menuHandlerLabel.Size = new System.Drawing.Size(74, 13);
-            this.menuHandlerLabel.TabIndex = 2;
-            this.menuHandlerLabel.Text = "Menu Handler";
-            // 
-            // menuNameTextBox
-            // 
-            this.menuNameTextBox.Location = new System.Drawing.Point(6, 32);
-            this.menuNameTextBox.Name = "menuNameTextBox";
-            this.menuNameTextBox.Size = new System.Drawing.Size(246, 20);
-            this.menuNameTextBox.TabIndex = 1;
-            // 
-            // menuNameLabel
-            // 
-            this.menuNameLabel.AutoSize = true;
-            this.menuNameLabel.Location = new System.Drawing.Point(6, 16);
-            this.menuNameLabel.Name = "menuNameLabel";
-            this.menuNameLabel.Size = new System.Drawing.Size(102, 13);
-            this.menuNameLabel.TabIndex = 0;
-            this.menuNameLabel.Text = "Menu Display Name";
-            // 
-            // menuItemsGroupBox
-            // 
-            this.menuItemsGroupBox.Controls.Add(this.downButton);
-            this.menuItemsGroupBox.Controls.Add(this.upButton);
-            this.menuItemsGroupBox.Controls.Add(this.deleteButton);
-            this.menuItemsGroupBox.Controls.Add(this.editButton);
-            this.menuItemsGroupBox.Controls.Add(this.addItemButton);
-            this.menuItemsGroupBox.Controls.Add(this.menuItemsListBox);
-            this.menuItemsGroupBox.Location = new System.Drawing.Point(13, 307);
-            this.menuItemsGroupBox.Name = "menuItemsGroupBox";
-            this.menuItemsGroupBox.Size = new System.Drawing.Size(276, 203);
-            this.menuItemsGroupBox.TabIndex = 2;
-            this.menuItemsGroupBox.TabStop = false;
-            this.menuItemsGroupBox.Text = "Menu Items";
-            // 
             // downButton
             // 
-            this.downButton.Location = new System.Drawing.Point(103, 174);
+            this.downButton.Location = new System.Drawing.Point(85, 265);
             this.downButton.Name = "downButton";
-            this.downButton.Size = new System.Drawing.Size(75, 23);
+            this.downButton.Size = new System.Drawing.Size(73, 23);
             this.downButton.TabIndex = 5;
             this.downButton.Text = "Move Down";
             this.downButton.UseVisualStyleBackColor = true;
@@ -309,9 +150,9 @@
             // 
             // upButton
             // 
-            this.upButton.Location = new System.Drawing.Point(8, 174);
+            this.upButton.Location = new System.Drawing.Point(6, 265);
             this.upButton.Name = "upButton";
-            this.upButton.Size = new System.Drawing.Size(75, 23);
+            this.upButton.Size = new System.Drawing.Size(73, 23);
             this.upButton.TabIndex = 4;
             this.upButton.Text = "Move Up";
             this.upButton.UseVisualStyleBackColor = true;
@@ -319,9 +160,9 @@
             // 
             // deleteButton
             // 
-            this.deleteButton.Location = new System.Drawing.Point(195, 146);
+            this.deleteButton.Location = new System.Drawing.Point(163, 236);
             this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(75, 23);
+            this.deleteButton.Size = new System.Drawing.Size(71, 23);
             this.deleteButton.TabIndex = 3;
             this.deleteButton.Text = "Delete";
             this.deleteButton.UseVisualStyleBackColor = true;
@@ -329,9 +170,9 @@
             // 
             // editButton
             // 
-            this.editButton.Location = new System.Drawing.Point(103, 146);
+            this.editButton.Location = new System.Drawing.Point(85, 236);
             this.editButton.Name = "editButton";
-            this.editButton.Size = new System.Drawing.Size(75, 23);
+            this.editButton.Size = new System.Drawing.Size(73, 23);
             this.editButton.TabIndex = 2;
             this.editButton.Text = "Edit";
             this.editButton.UseVisualStyleBackColor = true;
@@ -339,9 +180,9 @@
             // 
             // addItemButton
             // 
-            this.addItemButton.Location = new System.Drawing.Point(8, 146);
+            this.addItemButton.Location = new System.Drawing.Point(6, 236);
             this.addItemButton.Name = "addItemButton";
-            this.addItemButton.Size = new System.Drawing.Size(75, 23);
+            this.addItemButton.Size = new System.Drawing.Size(73, 23);
             this.addItemButton.TabIndex = 1;
             this.addItemButton.Text = "Add";
             this.addItemButton.UseVisualStyleBackColor = true;
@@ -351,31 +192,33 @@
             // 
             this.menuItemsListBox.DisplayMember = "DisplayName";
             this.menuItemsListBox.FormattingEnabled = true;
-            this.menuItemsListBox.Location = new System.Drawing.Point(6, 19);
+            this.menuItemsListBox.Location = new System.Drawing.Point(6, 6);
             this.menuItemsListBox.Name = "menuItemsListBox";
-            this.menuItemsListBox.Size = new System.Drawing.Size(264, 121);
+            this.menuItemsListBox.Size = new System.Drawing.Size(230, 225);
             this.menuItemsListBox.TabIndex = 0;
             // 
             // codeGroupBox
             // 
             this.codeGroupBox.Controls.Add(this.codeTextBox);
-            this.codeGroupBox.Location = new System.Drawing.Point(295, 13);
+            this.codeGroupBox.Location = new System.Drawing.Point(268, 12);
             this.codeGroupBox.Name = "codeGroupBox";
             this.codeGroupBox.Size = new System.Drawing.Size(747, 497);
             this.codeGroupBox.TabIndex = 3;
             this.codeGroupBox.TabStop = false;
-            this.codeGroupBox.Text = "Final Code";
+            this.codeGroupBox.Text = "Generated code";
             // 
             // codeTextBox
             // 
             this.codeTextBox.BackColor = System.Drawing.SystemColors.Window;
+            this.codeTextBox.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.codeTextBox.Location = new System.Drawing.Point(7, 19);
             this.codeTextBox.Multiline = true;
             this.codeTextBox.Name = "codeTextBox";
             this.codeTextBox.ReadOnly = true;
-            this.codeTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.codeTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.codeTextBox.Size = new System.Drawing.Size(734, 472);
             this.codeTextBox.TabIndex = 0;
+            this.codeTextBox.WordWrap = false;
             // 
             // errorProvider1
             // 
@@ -385,34 +228,418 @@
             // 
             this.generateButton.Location = new System.Drawing.Point(13, 517);
             this.generateButton.Name = "generateButton";
-            this.generateButton.Size = new System.Drawing.Size(1023, 62);
+            this.generateButton.Size = new System.Drawing.Size(249, 62);
             this.generateButton.TabIndex = 4;
-            this.generateButton.Text = "GENERATE CODE";
+            this.generateButton.Text = "Generate Code";
             this.generateButton.UseVisualStyleBackColor = true;
             this.generateButton.Click += new System.EventHandler(this.generateButton_Click);
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Location = new System.Drawing.Point(12, 12);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(250, 498);
+            this.tabControl1.TabIndex = 5;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.menuTimeGroupBox);
+            this.tabPage1.Controls.Add(this.parentMenuDisplayTextBox);
+            this.tabPage1.Controls.Add(this.parentMenuLabel);
+            this.tabPage1.Controls.Add(this.itemSelectedComboBox);
+            this.tabPage1.Controls.Add(this.menuNameGroupBox);
+            this.tabPage1.Controls.Add(this.ItemSelectedLabel);
+            this.tabPage1.Controls.Add(this.menuHandlerTextBox);
+            this.tabPage1.Controls.Add(this.paginationCheckBox);
+            this.tabPage1.Controls.Add(this.menuStyleLabel);
+            this.tabPage1.Controls.Add(this.typeComboBox);
+            this.tabPage1.Controls.Add(this.menuHandlerLabel);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(242, 472);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Menu Settings";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // parentMenuDisplayTextBox
+            // 
+            this.parentMenuDisplayTextBox.Enabled = false;
+            this.parentMenuDisplayTextBox.Location = new System.Drawing.Point(32, 278);
+            this.parentMenuDisplayTextBox.Name = "parentMenuDisplayTextBox";
+            this.parentMenuDisplayTextBox.Size = new System.Drawing.Size(204, 20);
+            this.parentMenuDisplayTextBox.TabIndex = 14;
+            // 
+            // parentMenuLabel
+            // 
+            this.parentMenuLabel.AutoSize = true;
+            this.parentMenuLabel.Location = new System.Drawing.Point(29, 262);
+            this.parentMenuLabel.Name = "parentMenuLabel";
+            this.parentMenuLabel.Size = new System.Drawing.Size(155, 13);
+            this.parentMenuLabel.TabIndex = 13;
+            this.parentMenuLabel.Text = "Parent Menu Display Command";
+            // 
+            // itemSelectedComboBox
+            // 
+            this.itemSelectedComboBox.FormattingEnabled = true;
+            this.itemSelectedComboBox.Items.AddRange(new object[] {
+            "Destroy menu (default)",
+            "Show menu again",
+            "Return to parent menu"});
+            this.itemSelectedComboBox.Location = new System.Drawing.Point(7, 238);
+            this.itemSelectedComboBox.Name = "itemSelectedComboBox";
+            this.itemSelectedComboBox.Size = new System.Drawing.Size(227, 21);
+            this.itemSelectedComboBox.TabIndex = 12;
+            this.itemSelectedComboBox.SelectedIndexChanged += new System.EventHandler(this.itemSelectedComboBox_SelectedIndexChanged);
+            // 
+            // menuNameGroupBox
+            // 
+            this.menuNameGroupBox.Controls.Add(this.menuNameTextBox);
+            this.menuNameGroupBox.Controls.Add(this.nameTranslationCheckBox);
+            this.menuNameGroupBox.Location = new System.Drawing.Point(6, 6);
+            this.menuNameGroupBox.Name = "menuNameGroupBox";
+            this.menuNameGroupBox.Size = new System.Drawing.Size(230, 69);
+            this.menuNameGroupBox.TabIndex = 11;
+            this.menuNameGroupBox.TabStop = false;
+            this.menuNameGroupBox.Text = "Menu name";
+            // 
+            // menuNameTextBox
+            // 
+            this.menuNameTextBox.Location = new System.Drawing.Point(6, 19);
+            this.menuNameTextBox.Name = "menuNameTextBox";
+            this.menuNameTextBox.Size = new System.Drawing.Size(216, 20);
+            this.menuNameTextBox.TabIndex = 1;
+            this.menuNameTextBox.Text = "MyMenu";
+            // 
+            // nameTranslationCheckBox
+            // 
+            this.nameTranslationCheckBox.AutoSize = true;
+            this.nameTranslationCheckBox.Location = new System.Drawing.Point(6, 45);
+            this.nameTranslationCheckBox.Name = "nameTranslationCheckBox";
+            this.nameTranslationCheckBox.Size = new System.Drawing.Size(159, 17);
+            this.nameTranslationCheckBox.TabIndex = 9;
+            this.nameTranslationCheckBox.Text = "Menu Name has Translation";
+            this.nameTranslationCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // ItemSelectedLabel
+            // 
+            this.ItemSelectedLabel.AutoSize = true;
+            this.ItemSelectedLabel.Location = new System.Drawing.Point(6, 221);
+            this.ItemSelectedLabel.Name = "ItemSelectedLabel";
+            this.ItemSelectedLabel.Size = new System.Drawing.Size(119, 13);
+            this.ItemSelectedLabel.TabIndex = 10;
+            this.ItemSelectedLabel.Text = "When items is selected:";
+            // 
+            // menuHandlerTextBox
+            // 
+            this.menuHandlerTextBox.Location = new System.Drawing.Point(9, 94);
+            this.menuHandlerTextBox.Name = "menuHandlerTextBox";
+            this.menuHandlerTextBox.Size = new System.Drawing.Size(225, 20);
+            this.menuHandlerTextBox.TabIndex = 3;
+            this.menuHandlerTextBox.Text = "mh_MyHandler";
+            // 
+            // menuHandlerLabel
+            // 
+            this.menuHandlerLabel.AutoSize = true;
+            this.menuHandlerLabel.Location = new System.Drawing.Point(6, 78);
+            this.menuHandlerLabel.Name = "menuHandlerLabel";
+            this.menuHandlerLabel.Size = new System.Drawing.Size(101, 13);
+            this.menuHandlerLabel.TabIndex = 2;
+            this.menuHandlerLabel.Text = "Menu handler name";
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.itemTranslationWikiLinkLabel);
+            this.tabPage2.Controls.Add(this.downButton);
+            this.tabPage2.Controls.Add(this.menuItemsListBox);
+            this.tabPage2.Controls.Add(this.upButton);
+            this.tabPage2.Controls.Add(this.addItemButton);
+            this.tabPage2.Controls.Add(this.translationCheckBox);
+            this.tabPage2.Controls.Add(this.deleteButton);
+            this.tabPage2.Controls.Add(this.editButton);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(242, 472);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Menu Items";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // itemTranslationWikiLinkLabel
+            // 
+            this.itemTranslationWikiLinkLabel.AutoSize = true;
+            this.itemTranslationWikiLinkLabel.Location = new System.Drawing.Point(111, 294);
+            this.itemTranslationWikiLinkLabel.Name = "itemTranslationWikiLinkLabel";
+            this.itemTranslationWikiLinkLabel.Size = new System.Drawing.Size(81, 13);
+            this.itemTranslationWikiLinkLabel.TabIndex = 13;
+            this.itemTranslationWikiLinkLabel.TabStop = true;
+            this.itemTranslationWikiLinkLabel.Text = "Wiki Reference";
+            this.itemTranslationWikiLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.itemTranslationWikiLinkLabel_LinkClicked);
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.pluginCheckBox);
+            this.tabPage3.Controls.Add(this.methodNameGroupBox);
+            this.tabPage3.Controls.Add(this.accessGroupBox);
+            this.tabPage3.Controls.Add(this.commandDescriptionGroupBox);
+            this.tabPage3.Controls.Add(this.commandGroupBox2);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(242, 472);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Cmd Settings";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // methodNameGroupBox
+            // 
+            this.methodNameGroupBox.Controls.Add(this.methodNameTextBox);
+            this.methodNameGroupBox.Controls.Add(this.methodNameExampleLabel);
+            this.methodNameGroupBox.Location = new System.Drawing.Point(3, 3);
+            this.methodNameGroupBox.Name = "methodNameGroupBox";
+            this.methodNameGroupBox.Size = new System.Drawing.Size(236, 63);
+            this.methodNameGroupBox.TabIndex = 3;
+            this.methodNameGroupBox.TabStop = false;
+            this.methodNameGroupBox.Text = "Method Name";
+            // 
+            // methodNameTextBox
+            // 
+            this.methodNameTextBox.Location = new System.Drawing.Point(6, 37);
+            this.methodNameTextBox.Name = "methodNameTextBox";
+            this.methodNameTextBox.Size = new System.Drawing.Size(223, 20);
+            this.methodNameTextBox.TabIndex = 1;
+            this.methodNameTextBox.Text = "ShowMenu";
+            // 
+            // methodNameExampleLabel
+            // 
+            this.methodNameExampleLabel.AutoSize = true;
+            this.methodNameExampleLabel.Location = new System.Drawing.Point(6, 20);
+            this.methodNameExampleLabel.Name = "methodNameExampleLabel";
+            this.methodNameExampleLabel.Size = new System.Drawing.Size(107, 13);
+            this.methodNameExampleLabel.TabIndex = 0;
+            this.methodNameExampleLabel.Text = "Example: ShowMenu";
+            // 
+            // accessGroupBox
+            // 
+            this.accessGroupBox.Controls.Add(this.accessLevelLinkLabel);
+            this.accessGroupBox.Controls.Add(this.accessLevelComboBox);
+            this.accessGroupBox.Location = new System.Drawing.Point(3, 235);
+            this.accessGroupBox.Name = "accessGroupBox";
+            this.accessGroupBox.Size = new System.Drawing.Size(236, 60);
+            this.accessGroupBox.TabIndex = 2;
+            this.accessGroupBox.TabStop = false;
+            this.accessGroupBox.Text = "Access Level";
+            // 
+            // accessLevelLinkLabel
+            // 
+            this.accessLevelLinkLabel.AutoSize = true;
+            this.accessLevelLinkLabel.Location = new System.Drawing.Point(149, 16);
+            this.accessLevelLinkLabel.Name = "accessLevelLinkLabel";
+            this.accessLevelLinkLabel.Size = new System.Drawing.Size(81, 13);
+            this.accessLevelLinkLabel.TabIndex = 1;
+            this.accessLevelLinkLabel.TabStop = true;
+            this.accessLevelLinkLabel.Text = "Wiki Reference";
+            this.accessLevelLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.accessLevelLinkLabel_LinkClicked);
+            // 
+            // accessLevelComboBox
+            // 
+            this.accessLevelComboBox.FormattingEnabled = true;
+            this.accessLevelComboBox.Items.AddRange(new object[] {
+            "Everyone (default)",
+            "a - Admin_Reservation",
+            "b - Admin_Generic",
+            "c - Admin_Kick",
+            "d - Admin_Ban",
+            "e - Admin_Unban",
+            "f - Admin_Slay",
+            "g - Admin_Changemap",
+            "h - Admin_Convars",
+            "i - Admin_Config",
+            "j - Admin_Chat",
+            "k - Admin_Vote",
+            "l - Admin_Password",
+            "m - Admin_RCON",
+            "n - Admin_Cheats",
+            "z - Admin_Root",
+            "o - Admin_Custom1",
+            "p - Admin_Custom2",
+            "q - Admin_Custom3",
+            "r - Admin_Custom4",
+            "s - Admin_Custom5",
+            "t - Admin_Custom6"});
+            this.accessLevelComboBox.Location = new System.Drawing.Point(8, 32);
+            this.accessLevelComboBox.Name = "accessLevelComboBox";
+            this.accessLevelComboBox.Size = new System.Drawing.Size(223, 21);
+            this.accessLevelComboBox.TabIndex = 0;
+            // 
+            // commandDescriptionGroupBox
+            // 
+            this.commandDescriptionGroupBox.Controls.Add(this.commandDescriptionTextBox);
+            this.commandDescriptionGroupBox.Controls.Add(this.commandDescriptionExampleLabel);
+            this.commandDescriptionGroupBox.Location = new System.Drawing.Point(4, 160);
+            this.commandDescriptionGroupBox.Name = "commandDescriptionGroupBox";
+            this.commandDescriptionGroupBox.Size = new System.Drawing.Size(235, 69);
+            this.commandDescriptionGroupBox.TabIndex = 1;
+            this.commandDescriptionGroupBox.TabStop = false;
+            this.commandDescriptionGroupBox.Text = "Command Description";
+            // 
+            // commandDescriptionTextBox
+            // 
+            this.commandDescriptionTextBox.Location = new System.Drawing.Point(7, 37);
+            this.commandDescriptionTextBox.Name = "commandDescriptionTextBox";
+            this.commandDescriptionTextBox.Size = new System.Drawing.Size(222, 20);
+            this.commandDescriptionTextBox.TabIndex = 1;
+            // 
+            // commandDescriptionExampleLabel
+            // 
+            this.commandDescriptionExampleLabel.AutoSize = true;
+            this.commandDescriptionExampleLabel.Location = new System.Drawing.Point(4, 21);
+            this.commandDescriptionExampleLabel.Name = "commandDescriptionExampleLabel";
+            this.commandDescriptionExampleLabel.Size = new System.Drawing.Size(126, 13);
+            this.commandDescriptionExampleLabel.TabIndex = 0;
+            this.commandDescriptionExampleLabel.Text = "Example: Brings up menu";
+            // 
+            // commandGroupBox2
+            // 
+            this.commandGroupBox2.Controls.Add(this.commandTextBox);
+            this.commandGroupBox2.Controls.Add(this.commandExampleLabel);
+            this.commandGroupBox2.Location = new System.Drawing.Point(4, 95);
+            this.commandGroupBox2.Name = "commandGroupBox2";
+            this.commandGroupBox2.Size = new System.Drawing.Size(235, 59);
+            this.commandGroupBox2.TabIndex = 0;
+            this.commandGroupBox2.TabStop = false;
+            this.commandGroupBox2.Text = "Command";
+            // 
+            // commandTextBox
+            // 
+            this.commandTextBox.Location = new System.Drawing.Point(6, 32);
+            this.commandTextBox.Name = "commandTextBox";
+            this.commandTextBox.Size = new System.Drawing.Size(223, 20);
+            this.commandTextBox.TabIndex = 1;
+            this.commandTextBox.Text = "mymenu";
+            // 
+            // commandExampleLabel
+            // 
+            this.commandExampleLabel.AutoSize = true;
+            this.commandExampleLabel.Location = new System.Drawing.Point(4, 16);
+            this.commandExampleLabel.Name = "commandExampleLabel";
+            this.commandExampleLabel.Size = new System.Drawing.Size(139, 13);
+            this.commandExampleLabel.TabIndex = 0;
+            this.commandExampleLabel.Text = "Examples: sm_menu, bacon";
+            // 
+            // powerlordLinkLabel
+            // 
+            this.powerlordLinkLabel.AutoSize = true;
+            this.powerlordLinkLabel.Location = new System.Drawing.Point(266, 542);
+            this.powerlordLinkLabel.Name = "powerlordLinkLabel";
+            this.powerlordLinkLabel.Size = new System.Drawing.Size(235, 13);
+            this.powerlordLinkLabel.TabIndex = 6;
+            this.powerlordLinkLabel.TabStop = true;
+            this.powerlordLinkLabel.Text = "SourceMod Menu Generator made by Powerlord";
+            this.powerlordLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.powerlordLinkLabel_LinkClicked);
+            // 
+            // clipboardButton
+            // 
+            this.clipboardButton.Location = new System.Drawing.Point(507, 517);
+            this.clipboardButton.Name = "clipboardButton";
+            this.clipboardButton.Size = new System.Drawing.Size(249, 62);
+            this.clipboardButton.TabIndex = 7;
+            this.clipboardButton.Text = "Copy text to clipboard";
+            this.clipboardButton.UseVisualStyleBackColor = true;
+            this.clipboardButton.Click += new System.EventHandler(this.clipboardButton_Click);
+            // 
+            // saveButton
+            // 
+            this.saveButton.Location = new System.Drawing.Point(762, 517);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(249, 62);
+            this.saveButton.TabIndex = 8;
+            this.saveButton.Text = "Save .sp to file";
+            this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
+            // 
+            // menuTimeGroupBox
+            // 
+            this.menuTimeGroupBox.Controls.Add(this.menuTimeExampleLabel);
+            this.menuTimeGroupBox.Controls.Add(this.menuTimeTextBox);
+            this.menuTimeGroupBox.Location = new System.Drawing.Point(6, 171);
+            this.menuTimeGroupBox.Name = "menuTimeGroupBox";
+            this.menuTimeGroupBox.Size = new System.Drawing.Size(230, 47);
+            this.menuTimeGroupBox.TabIndex = 15;
+            this.menuTimeGroupBox.TabStop = false;
+            this.menuTimeGroupBox.Text = "Display Time";
+            // 
+            // menuTimeTextBox
+            // 
+            this.menuTimeTextBox.Location = new System.Drawing.Point(7, 20);
+            this.menuTimeTextBox.MaxLength = 3;
+            this.menuTimeTextBox.Name = "menuTimeTextBox";
+            this.menuTimeTextBox.Size = new System.Drawing.Size(29, 20);
+            this.menuTimeTextBox.TabIndex = 0;
+            this.menuTimeTextBox.Text = "0";
+            // 
+            // menuTimeExampleLabel
+            // 
+            this.menuTimeExampleLabel.AutoSize = true;
+            this.menuTimeExampleLabel.Location = new System.Drawing.Point(42, 23);
+            this.menuTimeExampleLabel.Name = "menuTimeExampleLabel";
+            this.menuTimeExampleLabel.Size = new System.Drawing.Size(136, 13);
+            this.menuTimeExampleLabel.TabIndex = 1;
+            this.menuTimeExampleLabel.Text = "In seconds, 0 = until closed";
+            // 
+            // pluginCheckBox
+            // 
+            this.pluginCheckBox.AutoSize = true;
+            this.pluginCheckBox.Checked = true;
+            this.pluginCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.pluginCheckBox.Location = new System.Drawing.Point(3, 72);
+            this.pluginCheckBox.Name = "pluginCheckBox";
+            this.pluginCheckBox.Size = new System.Drawing.Size(103, 17);
+            this.pluginCheckBox.TabIndex = 4;
+            this.pluginCheckBox.Text = "Add Plugin Shell";
+            this.pluginCheckBox.UseVisualStyleBackColor = true;
             // 
             // MenuGeneratorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1054, 591);
+            this.ClientSize = new System.Drawing.Size(1023, 584);
+            this.Controls.Add(this.saveButton);
+            this.Controls.Add(this.clipboardButton);
+            this.Controls.Add(this.powerlordLinkLabel);
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.generateButton);
             this.Controls.Add(this.codeGroupBox);
-            this.Controls.Add(this.menuItemsGroupBox);
-            this.Controls.Add(this.menuInfoGroupBox);
-            this.Controls.Add(this.menuSettingsGroupBox);
             this.Name = "MenuGeneratorForm";
             this.Text = "SourceMod Menu Generator";
             this.Load += new System.EventHandler(this.MenuGeneratorForm_Load);
-            this.menuSettingsGroupBox.ResumeLayout(false);
-            this.menuSettingsGroupBox.PerformLayout();
-            this.menuInfoGroupBox.ResumeLayout(false);
-            this.menuInfoGroupBox.PerformLayout();
-            this.menuItemsGroupBox.ResumeLayout(false);
             this.codeGroupBox.ResumeLayout(false);
             this.codeGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            this.menuNameGroupBox.ResumeLayout(false);
+            this.menuNameGroupBox.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
+            this.methodNameGroupBox.ResumeLayout(false);
+            this.methodNameGroupBox.PerformLayout();
+            this.accessGroupBox.ResumeLayout(false);
+            this.accessGroupBox.PerformLayout();
+            this.commandDescriptionGroupBox.ResumeLayout(false);
+            this.commandDescriptionGroupBox.PerformLayout();
+            this.commandGroupBox2.ResumeLayout(false);
+            this.commandGroupBox2.PerformLayout();
+            this.menuTimeGroupBox.ResumeLayout(false);
+            this.menuTimeGroupBox.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -420,24 +647,8 @@
 
         private System.Windows.Forms.ComboBox typeComboBox;
         private System.Windows.Forms.Label menuStyleLabel;
-        private System.Windows.Forms.GroupBox menuSettingsGroupBox;
         private System.Windows.Forms.CheckBox paginationCheckBox;
-        private System.Windows.Forms.CheckBox cancelCheckBox;
         private System.Windows.Forms.CheckBox translationCheckBox;
-        private System.Windows.Forms.CheckBox submenuCheckBox;
-        private System.Windows.Forms.CheckBox selectCheckBox;
-        private System.Windows.Forms.CheckBox displayCheckBox;
-        private System.Windows.Forms.CheckBox startCheckBox;
-        private System.Windows.Forms.CheckBox closeHandleCheckBox;
-        private System.Windows.Forms.CheckBox endCheckBox;
-        private System.Windows.Forms.CheckBox titleCheckBox;
-        private System.Windows.Forms.CheckBox overrideStyleCheckBox;
-        private System.Windows.Forms.GroupBox menuInfoGroupBox;
-        private System.Windows.Forms.Label menuNameLabel;
-        private System.Windows.Forms.TextBox menuHandlerTextBox;
-        private System.Windows.Forms.Label menuHandlerLabel;
-        private System.Windows.Forms.TextBox menuNameTextBox;
-        private System.Windows.Forms.GroupBox menuItemsGroupBox;
         private System.Windows.Forms.ListBox menuItemsListBox;
         private System.Windows.Forms.GroupBox codeGroupBox;
         private System.Windows.Forms.Button deleteButton;
@@ -449,6 +660,40 @@
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Button generateButton;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.Label ItemSelectedLabel;
+        private System.Windows.Forms.TextBox menuHandlerTextBox;
+        private System.Windows.Forms.Label menuHandlerLabel;
+        private System.Windows.Forms.CheckBox nameTranslationCheckBox;
+        private System.Windows.Forms.TextBox menuNameTextBox;
+        private System.Windows.Forms.ComboBox itemSelectedComboBox;
+        private System.Windows.Forms.GroupBox menuNameGroupBox;
+        private System.Windows.Forms.LinkLabel itemTranslationWikiLinkLabel;
+        private System.Windows.Forms.GroupBox commandGroupBox2;
+        private System.Windows.Forms.TextBox commandTextBox;
+        private System.Windows.Forms.Label commandExampleLabel;
+        private System.Windows.Forms.GroupBox commandDescriptionGroupBox;
+        private System.Windows.Forms.TextBox commandDescriptionTextBox;
+        private System.Windows.Forms.Label commandDescriptionExampleLabel;
+        private System.Windows.Forms.GroupBox accessGroupBox;
+        private System.Windows.Forms.LinkLabel accessLevelLinkLabel;
+        private System.Windows.Forms.ComboBox accessLevelComboBox;
+        private System.Windows.Forms.Label parentMenuLabel;
+        private System.Windows.Forms.GroupBox methodNameGroupBox;
+        private System.Windows.Forms.Label methodNameExampleLabel;
+        private System.Windows.Forms.TextBox methodNameTextBox;
+        private System.Windows.Forms.TextBox parentMenuDisplayTextBox;
+        private System.Windows.Forms.Button saveButton;
+        private System.Windows.Forms.Button clipboardButton;
+        private System.Windows.Forms.LinkLabel powerlordLinkLabel;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.GroupBox menuTimeGroupBox;
+        private System.Windows.Forms.Label menuTimeExampleLabel;
+        private System.Windows.Forms.TextBox menuTimeTextBox;
+        private System.Windows.Forms.CheckBox pluginCheckBox;
 
     }
 }
