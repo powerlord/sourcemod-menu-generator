@@ -101,24 +101,25 @@ namespace SourceMod_Menu_Generator
                 item = new SourceModMenuItem();
             }
 
-            bool errors = false;
+            var errorList = new StringBuilder();
 
             errorProvider1.Clear();
 
             if (string.IsNullOrEmpty(displayNameTextBox.Text))
             {
                 errorProvider1.SetError(displayNameTextBox, "Display Name must be set");
-                errors = true;
+                errorList.AppendLine("Display Name must be set");
             }
 
             if (string.IsNullOrEmpty(itemNameTextBox.Text))
             {
                 errorProvider1.SetError(itemNameTextBox, "Item Name must be set");
-                errors = true;
+                errorList.AppendLine("Item Name must be set");
             }
 
-            if (errors)
+            if (errorList.Length > 0)
             {
+                MessageBox.Show(errorList.ToString(), "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
