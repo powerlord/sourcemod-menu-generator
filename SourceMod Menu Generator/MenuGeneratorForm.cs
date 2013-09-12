@@ -307,7 +307,7 @@ namespace SourceMod_Menu_Generator
 
             if (!paginationCheckBox.Checked)
             {
-                codeBuilder.AppendLine("\tSetMenuPagination(menu, MENO_NO_PAGINATION);");
+                codeBuilder.AppendLine("\tSetMenuPagination(menu, MENU_NO_PAGINATION);");
             }
 
             codeBuilder.AppendLine();
