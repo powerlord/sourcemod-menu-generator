@@ -406,13 +406,15 @@ namespace SourceMod_Menu_Generator
 
             codeBuilder.AppendLine().Append("\tDisplayMenu(menu, client, ");
 
-            string time = menuTimeTextBox.Text;
-            if (time == "0")
+            if (menuTimeNumericUpDown.Value == 0)
             {
-                time = "MENU_TIME_FOREVER";
+                codeBuilder.Append("MENU_TIME_FOREVER");
             }
-
-            codeBuilder.Append(time).AppendLine(");");
+            else
+            {
+                codeBuilder.Append(menuTimeNumericUpDown.Value);
+            }
+            codeBuilder.AppendLine(");");
 
             codeBuilder.AppendLine("}").AppendLine();
 
@@ -462,7 +464,7 @@ namespace SourceMod_Menu_Generator
                     if (itemSelectedComboBox.SelectedIndex == 1)
                     {
                         codeBuilder.AppendLine("\t\t\t\tnew pos = GetMenuSelectionPosition(menu);");
-                        codeBuilder.Append("\t\t\t\tDisplayMenuAtItem(CloneHandle(menu), client, pos, ").Append(time).AppendLine(");");
+                        codeBuilder.Append("\t\t\t\tDisplayMenuAtItem(CloneHandle(menu), client, pos, ").Append(menuTimeNumericUpDown.Value).AppendLine(");");
                     }
                     codeBuilder.AppendLine("\t\t\t}");
                 }

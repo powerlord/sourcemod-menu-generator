@@ -49,7 +49,6 @@
             this.exitCheckBox = new System.Windows.Forms.CheckBox();
             this.menuTimeGroupBox = new System.Windows.Forms.GroupBox();
             this.menuTimeExampleLabel = new System.Windows.Forms.Label();
-            this.menuTimeTextBox = new System.Windows.Forms.TextBox();
             this.parentMenuDisplayTextBox = new System.Windows.Forms.TextBox();
             this.parentMenuLabel = new System.Windows.Forms.Label();
             this.itemSelectedComboBox = new System.Windows.Forms.ComboBox();
@@ -79,6 +78,7 @@
             this.clipboardButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.menuTimeNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.codeGroupBox.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -90,6 +90,7 @@
             this.accessGroupBox.SuspendLayout();
             this.commandDescriptionGroupBox.SuspendLayout();
             this.commandGroupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.menuTimeNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // typeComboBox
@@ -289,8 +290,8 @@
             // 
             // menuTimeGroupBox
             // 
+            this.menuTimeGroupBox.Controls.Add(this.menuTimeNumericUpDown);
             this.menuTimeGroupBox.Controls.Add(this.menuTimeExampleLabel);
-            this.menuTimeGroupBox.Controls.Add(this.menuTimeTextBox);
             this.menuTimeGroupBox.Location = new System.Drawing.Point(6, 193);
             this.menuTimeGroupBox.Name = "menuTimeGroupBox";
             this.menuTimeGroupBox.Size = new System.Drawing.Size(230, 47);
@@ -301,20 +302,11 @@
             // menuTimeExampleLabel
             // 
             this.menuTimeExampleLabel.AutoSize = true;
-            this.menuTimeExampleLabel.Location = new System.Drawing.Point(42, 23);
+            this.menuTimeExampleLabel.Location = new System.Drawing.Point(66, 23);
             this.menuTimeExampleLabel.Name = "menuTimeExampleLabel";
             this.menuTimeExampleLabel.Size = new System.Drawing.Size(136, 13);
             this.menuTimeExampleLabel.TabIndex = 1;
             this.menuTimeExampleLabel.Text = "In seconds, 0 = until closed";
-            // 
-            // menuTimeTextBox
-            // 
-            this.menuTimeTextBox.Location = new System.Drawing.Point(7, 20);
-            this.menuTimeTextBox.MaxLength = 3;
-            this.menuTimeTextBox.Name = "menuTimeTextBox";
-            this.menuTimeTextBox.Size = new System.Drawing.Size(29, 20);
-            this.menuTimeTextBox.TabIndex = 0;
-            this.menuTimeTextBox.Text = "0";
             // 
             // parentMenuDisplayTextBox
             // 
@@ -378,9 +370,9 @@
             this.ItemSelectedLabel.AutoSize = true;
             this.ItemSelectedLabel.Location = new System.Drawing.Point(6, 305);
             this.ItemSelectedLabel.Name = "ItemSelectedLabel";
-            this.ItemSelectedLabel.Size = new System.Drawing.Size(119, 13);
+            this.ItemSelectedLabel.Size = new System.Drawing.Size(127, 13);
             this.ItemSelectedLabel.TabIndex = 10;
-            this.ItemSelectedLabel.Text = "When items is selected:";
+            this.ItemSelectedLabel.Text = "When items are selected:";
             // 
             // menuHandlerTextBox
             // 
@@ -626,6 +618,18 @@
             // 
             this.saveFileDialog1.Filter = "SourcePawn Files (*.sp)|*.sp";
             // 
+            // menuTimeNumericUpDown
+            // 
+            this.menuTimeNumericUpDown.Location = new System.Drawing.Point(6, 21);
+            this.menuTimeNumericUpDown.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+            this.menuTimeNumericUpDown.Name = "menuTimeNumericUpDown";
+            this.menuTimeNumericUpDown.Size = new System.Drawing.Size(54, 20);
+            this.menuTimeNumericUpDown.TabIndex = 17;
+            // 
             // MenuGeneratorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -661,6 +665,7 @@
             this.commandDescriptionGroupBox.PerformLayout();
             this.commandGroupBox2.ResumeLayout(false);
             this.commandGroupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.menuTimeNumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -714,10 +719,10 @@
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.GroupBox menuTimeGroupBox;
         private System.Windows.Forms.Label menuTimeExampleLabel;
-        private System.Windows.Forms.TextBox menuTimeTextBox;
         private System.Windows.Forms.CheckBox pluginCheckBox;
         private System.Windows.Forms.CheckBox exitCheckBox;
         private System.Windows.Forms.CheckBox parentCheckBox;
+        private System.Windows.Forms.NumericUpDown menuTimeNumericUpDown;
 
     }
 }
