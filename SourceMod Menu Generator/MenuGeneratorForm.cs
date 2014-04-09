@@ -20,6 +20,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.IO;
 
 namespace SourceMod_Menu_Generator
 {
@@ -557,7 +558,20 @@ namespace SourceMod_Menu_Generator
 
         private void saveButton_Click(object sender, EventArgs e)
         {
+            if (!string.IsNullOrEmpty(codeTextBox.Text))
+            {
 
+                DialogResult result = saveFileDialog1.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    using (StreamWriter writer = File.CreateText(saveFileDialog1.FileName))
+                    {
+                        writer.Write(codeTextBox.Text);
+                        writer.Flush();
+                        writer.Close();
+                    }
+                }
+            }
         }
 
         private void powerlordLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

@@ -622,6 +622,10 @@
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.Filter = "SourcePawn Files (*.sp)|*.sp";
+            // 
             // MenuGeneratorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
