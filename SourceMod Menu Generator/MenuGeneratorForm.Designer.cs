@@ -41,11 +41,15 @@
             this.menuItemsListBox = new System.Windows.Forms.ListBox();
             this.codeGroupBox = new System.Windows.Forms.GroupBox();
             this.codeTextBox = new System.Windows.Forms.TextBox();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.generateButton = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.parentCheckBox = new System.Windows.Forms.CheckBox();
+            this.exitCheckBox = new System.Windows.Forms.CheckBox();
+            this.menuTimeGroupBox = new System.Windows.Forms.GroupBox();
+            this.menuTimeExampleLabel = new System.Windows.Forms.Label();
+            this.menuTimeTextBox = new System.Windows.Forms.TextBox();
             this.parentMenuDisplayTextBox = new System.Windows.Forms.TextBox();
             this.parentMenuLabel = new System.Windows.Forms.Label();
             this.itemSelectedComboBox = new System.Windows.Forms.ComboBox();
@@ -58,6 +62,7 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.itemTranslationWikiLinkLabel = new System.Windows.Forms.LinkLabel();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.pluginCheckBox = new System.Windows.Forms.CheckBox();
             this.methodNameGroupBox = new System.Windows.Forms.GroupBox();
             this.methodNameTextBox = new System.Windows.Forms.TextBox();
             this.methodNameExampleLabel = new System.Windows.Forms.Label();
@@ -74,14 +79,10 @@
             this.clipboardButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.menuTimeGroupBox = new System.Windows.Forms.GroupBox();
-            this.menuTimeTextBox = new System.Windows.Forms.TextBox();
-            this.menuTimeExampleLabel = new System.Windows.Forms.Label();
-            this.pluginCheckBox = new System.Windows.Forms.CheckBox();
             this.codeGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.menuTimeGroupBox.SuspendLayout();
             this.menuNameGroupBox.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -89,7 +90,6 @@
             this.accessGroupBox.SuspendLayout();
             this.commandDescriptionGroupBox.SuspendLayout();
             this.commandGroupBox2.SuspendLayout();
-            this.menuTimeGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // typeComboBox
@@ -210,7 +210,7 @@
             // codeTextBox
             // 
             this.codeTextBox.BackColor = System.Drawing.SystemColors.Window;
-            this.codeTextBox.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.codeTextBox.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.codeTextBox.Location = new System.Drawing.Point(7, 19);
             this.codeTextBox.Multiline = true;
             this.codeTextBox.Name = "codeTextBox";
@@ -219,10 +219,6 @@
             this.codeTextBox.Size = new System.Drawing.Size(734, 472);
             this.codeTextBox.TabIndex = 0;
             this.codeTextBox.WordWrap = false;
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
             // 
             // generateButton
             // 
@@ -247,6 +243,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.parentCheckBox);
+            this.tabPage1.Controls.Add(this.exitCheckBox);
             this.tabPage1.Controls.Add(this.menuTimeGroupBox);
             this.tabPage1.Controls.Add(this.parentMenuDisplayTextBox);
             this.tabPage1.Controls.Add(this.parentMenuLabel);
@@ -266,10 +264,62 @@
             this.tabPage1.Text = "Menu Settings";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // parentCheckBox
+            // 
+            this.parentCheckBox.AutoSize = true;
+            this.parentCheckBox.Location = new System.Drawing.Point(6, 246);
+            this.parentCheckBox.Name = "parentCheckBox";
+            this.parentCheckBox.Size = new System.Drawing.Size(139, 17);
+            this.parentCheckBox.TabIndex = 16;
+            this.parentCheckBox.Text = "Menu Has Parent Menu";
+            this.parentCheckBox.UseVisualStyleBackColor = true;
+            this.parentCheckBox.CheckedChanged += new System.EventHandler(this.parentCheckBox_CheckedChanged);
+            // 
+            // exitCheckBox
+            // 
+            this.exitCheckBox.AutoSize = true;
+            this.exitCheckBox.Checked = true;
+            this.exitCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.exitCheckBox.Location = new System.Drawing.Point(6, 170);
+            this.exitCheckBox.Name = "exitCheckBox";
+            this.exitCheckBox.Size = new System.Drawing.Size(127, 17);
+            this.exitCheckBox.TabIndex = 2;
+            this.exitCheckBox.Text = "Menu has Exit Button";
+            this.exitCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // menuTimeGroupBox
+            // 
+            this.menuTimeGroupBox.Controls.Add(this.menuTimeExampleLabel);
+            this.menuTimeGroupBox.Controls.Add(this.menuTimeTextBox);
+            this.menuTimeGroupBox.Location = new System.Drawing.Point(6, 193);
+            this.menuTimeGroupBox.Name = "menuTimeGroupBox";
+            this.menuTimeGroupBox.Size = new System.Drawing.Size(230, 47);
+            this.menuTimeGroupBox.TabIndex = 15;
+            this.menuTimeGroupBox.TabStop = false;
+            this.menuTimeGroupBox.Text = "Display Time";
+            // 
+            // menuTimeExampleLabel
+            // 
+            this.menuTimeExampleLabel.AutoSize = true;
+            this.menuTimeExampleLabel.Location = new System.Drawing.Point(42, 23);
+            this.menuTimeExampleLabel.Name = "menuTimeExampleLabel";
+            this.menuTimeExampleLabel.Size = new System.Drawing.Size(136, 13);
+            this.menuTimeExampleLabel.TabIndex = 1;
+            this.menuTimeExampleLabel.Text = "In seconds, 0 = until closed";
+            // 
+            // menuTimeTextBox
+            // 
+            this.menuTimeTextBox.Location = new System.Drawing.Point(7, 20);
+            this.menuTimeTextBox.MaxLength = 3;
+            this.menuTimeTextBox.Name = "menuTimeTextBox";
+            this.menuTimeTextBox.Size = new System.Drawing.Size(29, 20);
+            this.menuTimeTextBox.TabIndex = 0;
+            this.menuTimeTextBox.Text = "0";
+            // 
             // parentMenuDisplayTextBox
             // 
             this.parentMenuDisplayTextBox.Enabled = false;
-            this.parentMenuDisplayTextBox.Location = new System.Drawing.Point(32, 278);
+            this.parentMenuDisplayTextBox.Location = new System.Drawing.Point(32, 282);
             this.parentMenuDisplayTextBox.Name = "parentMenuDisplayTextBox";
             this.parentMenuDisplayTextBox.Size = new System.Drawing.Size(204, 20);
             this.parentMenuDisplayTextBox.TabIndex = 14;
@@ -277,24 +327,22 @@
             // parentMenuLabel
             // 
             this.parentMenuLabel.AutoSize = true;
-            this.parentMenuLabel.Location = new System.Drawing.Point(29, 262);
+            this.parentMenuLabel.Location = new System.Drawing.Point(29, 266);
             this.parentMenuLabel.Name = "parentMenuLabel";
-            this.parentMenuLabel.Size = new System.Drawing.Size(155, 13);
+            this.parentMenuLabel.Size = new System.Drawing.Size(144, 13);
             this.parentMenuLabel.TabIndex = 13;
-            this.parentMenuLabel.Text = "Parent Menu Display Command";
+            this.parentMenuLabel.Text = "Parent Menu Display Method";
             // 
             // itemSelectedComboBox
             // 
             this.itemSelectedComboBox.FormattingEnabled = true;
             this.itemSelectedComboBox.Items.AddRange(new object[] {
-            "Destroy menu (default)",
-            "Show menu again",
-            "Return to parent menu"});
-            this.itemSelectedComboBox.Location = new System.Drawing.Point(7, 238);
+            "Close menu (default)",
+            "Redisplay menu"});
+            this.itemSelectedComboBox.Location = new System.Drawing.Point(7, 322);
             this.itemSelectedComboBox.Name = "itemSelectedComboBox";
             this.itemSelectedComboBox.Size = new System.Drawing.Size(227, 21);
             this.itemSelectedComboBox.TabIndex = 12;
-            this.itemSelectedComboBox.SelectedIndexChanged += new System.EventHandler(this.itemSelectedComboBox_SelectedIndexChanged);
             // 
             // menuNameGroupBox
             // 
@@ -328,7 +376,7 @@
             // ItemSelectedLabel
             // 
             this.ItemSelectedLabel.AutoSize = true;
-            this.ItemSelectedLabel.Location = new System.Drawing.Point(6, 221);
+            this.ItemSelectedLabel.Location = new System.Drawing.Point(6, 305);
             this.ItemSelectedLabel.Name = "ItemSelectedLabel";
             this.ItemSelectedLabel.Size = new System.Drawing.Size(119, 13);
             this.ItemSelectedLabel.TabIndex = 10;
@@ -393,6 +441,19 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Cmd Settings";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // pluginCheckBox
+            // 
+            this.pluginCheckBox.AutoSize = true;
+            this.pluginCheckBox.Checked = true;
+            this.pluginCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.pluginCheckBox.Location = new System.Drawing.Point(3, 72);
+            this.pluginCheckBox.Name = "pluginCheckBox";
+            this.pluginCheckBox.Size = new System.Drawing.Size(103, 17);
+            this.pluginCheckBox.TabIndex = 4;
+            this.pluginCheckBox.Text = "Add Plugin Shell";
+            this.pluginCheckBox.UseVisualStyleBackColor = true;
+            this.pluginCheckBox.CheckedChanged += new System.EventHandler(this.pluginCheckBox_CheckedChanged);
             // 
             // methodNameGroupBox
             // 
@@ -561,47 +622,6 @@
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
-            // menuTimeGroupBox
-            // 
-            this.menuTimeGroupBox.Controls.Add(this.menuTimeExampleLabel);
-            this.menuTimeGroupBox.Controls.Add(this.menuTimeTextBox);
-            this.menuTimeGroupBox.Location = new System.Drawing.Point(6, 171);
-            this.menuTimeGroupBox.Name = "menuTimeGroupBox";
-            this.menuTimeGroupBox.Size = new System.Drawing.Size(230, 47);
-            this.menuTimeGroupBox.TabIndex = 15;
-            this.menuTimeGroupBox.TabStop = false;
-            this.menuTimeGroupBox.Text = "Display Time";
-            // 
-            // menuTimeTextBox
-            // 
-            this.menuTimeTextBox.Location = new System.Drawing.Point(7, 20);
-            this.menuTimeTextBox.MaxLength = 3;
-            this.menuTimeTextBox.Name = "menuTimeTextBox";
-            this.menuTimeTextBox.Size = new System.Drawing.Size(29, 20);
-            this.menuTimeTextBox.TabIndex = 0;
-            this.menuTimeTextBox.Text = "0";
-            // 
-            // menuTimeExampleLabel
-            // 
-            this.menuTimeExampleLabel.AutoSize = true;
-            this.menuTimeExampleLabel.Location = new System.Drawing.Point(42, 23);
-            this.menuTimeExampleLabel.Name = "menuTimeExampleLabel";
-            this.menuTimeExampleLabel.Size = new System.Drawing.Size(136, 13);
-            this.menuTimeExampleLabel.TabIndex = 1;
-            this.menuTimeExampleLabel.Text = "In seconds, 0 = until closed";
-            // 
-            // pluginCheckBox
-            // 
-            this.pluginCheckBox.AutoSize = true;
-            this.pluginCheckBox.Checked = true;
-            this.pluginCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.pluginCheckBox.Location = new System.Drawing.Point(3, 72);
-            this.pluginCheckBox.Name = "pluginCheckBox";
-            this.pluginCheckBox.Size = new System.Drawing.Size(103, 17);
-            this.pluginCheckBox.TabIndex = 4;
-            this.pluginCheckBox.Text = "Add Plugin Shell";
-            this.pluginCheckBox.UseVisualStyleBackColor = true;
-            // 
             // MenuGeneratorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -618,10 +638,11 @@
             this.Load += new System.EventHandler(this.MenuGeneratorForm_Load);
             this.codeGroupBox.ResumeLayout(false);
             this.codeGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.menuTimeGroupBox.ResumeLayout(false);
+            this.menuTimeGroupBox.PerformLayout();
             this.menuNameGroupBox.ResumeLayout(false);
             this.menuNameGroupBox.PerformLayout();
             this.tabPage2.ResumeLayout(false);
@@ -636,8 +657,6 @@
             this.commandDescriptionGroupBox.PerformLayout();
             this.commandGroupBox2.ResumeLayout(false);
             this.commandGroupBox2.PerformLayout();
-            this.menuTimeGroupBox.ResumeLayout(false);
-            this.menuTimeGroupBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -657,7 +676,6 @@
         private System.Windows.Forms.TextBox codeTextBox;
         private System.Windows.Forms.Button downButton;
         private System.Windows.Forms.Button upButton;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Button generateButton;
         private System.Windows.Forms.TabControl tabControl1;
@@ -694,6 +712,8 @@
         private System.Windows.Forms.Label menuTimeExampleLabel;
         private System.Windows.Forms.TextBox menuTimeTextBox;
         private System.Windows.Forms.CheckBox pluginCheckBox;
+        private System.Windows.Forms.CheckBox exitCheckBox;
+        private System.Windows.Forms.CheckBox parentCheckBox;
 
     }
 }

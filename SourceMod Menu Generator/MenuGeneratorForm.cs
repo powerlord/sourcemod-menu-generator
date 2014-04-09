@@ -81,6 +81,10 @@ namespace SourceMod_Menu_Generator
             Custom6,        // t
         }
 
+        readonly string[] admFlags = { "", "ADMFLAG_RESERVATION", "ADMFLAG_GENERIC", "ADMFLAG_KICK", "ADMFLAG_BAN", "ADMFLAG_UNBAN", "ADMFLAG_SLAY", "ADMFLAG_CHANGEMAP", "ADMFLAG_CONVARS",
+                                  "ADMFLAG_CONFIG", "ADMFLAG_CHAT", "ADMFLAG_VOTE", "ADMFLAG_PASSWORD", "ADMFLAG_RCON", "ADMFLAG_CHEATS", "ADMFLAG_ROOT", 
+                                  "ADMFLAG_CUSTOM1", "ADMFLAG_CUSTOM2", "ADMFLAG_CUSTOM3", "ADMFLAG_CUSTOM4", "ADMFLAG_CUSTOM5", "ADMFLAG_CUSTOM6"};
+
         const MenuAction MENU_ACTIONS_DEFAULT = MenuAction.Select | MenuAction.Cancel | MenuAction.End;
         const string START = "MenuAction_Start";
         const string DISPLAY = "MenuAction_Display";
@@ -183,57 +187,55 @@ namespace SourceMod_Menu_Generator
 
         private void generateButton_Click(object sender, EventArgs e)
         {
-            errorProvider1.Clear();
-
-            //List<string> errorList = new List<string>();
+            //errorProvider1.Clear();
 
             StringBuilder errorList = new StringBuilder();
 
             if (string.IsNullOrEmpty(menuHandlerTextBox.Text))
             {
-                errorProvider1.SetError(menuHandlerTextBox, "Menu handler can't be empty");
+                // errorProvider1.SetError(menuHandlerTextBox, "Menu handler can't be empty");
                 errorList.AppendLine("Menu handler can't be empty");
 
             }
             else if (menuHandlerTextBox.Text.Contains(" "))
             {
-                errorProvider1.SetError(menuHandlerTextBox, "Menu handler can't contain spaces");
+                //errorProvider1.SetError(menuHandlerTextBox, "Menu handler can't contain spaces");
                 errorList.AppendLine("Menu handler can't contain spaces");
             }
             else if (menuHandlerTextBox.Text == "MenuHandler")
             {
-                errorProvider1.SetError(menuHandlerTextBox, "MenuHandler is a reserved name");
+                //errorProvider1.SetError(menuHandlerTextBox, "MenuHandler is a reserved name");
                 errorList.AppendLine("MenuHandler is a reserved name");
             }
 
             if (string.IsNullOrEmpty(methodNameTextBox.Text))
             {
-                errorProvider1.SetError(methodNameTextBox, "Method name can't be empty");
+                //errorProvider1.SetError(methodNameTextBox, "Method name can't be empty");
                 errorList.AppendLine("Method name can't be empty");
             }
             else if (methodNameTextBox.Text.Contains(" "))
             {
-                errorProvider1.SetError(methodNameTextBox, "Method name can't contain spaces");
+                //errorProvider1.SetError(methodNameTextBox, "Method name can't contain spaces");
                 errorList.AppendLine("Method name can't contain spaces");
             }
 
             if (menuItemsListBox.Items.Count <= 0)
             {
-                errorProvider1.SetError(menuItemsListBox, "At least one menu item is required.");
+                //errorProvider1.SetError(menuItemsListBox, "At least one menu item is required.");
                 errorList.AppendLine("At least one menu item is required.");
             }
 
-            if (itemSelectedComboBox.SelectedIndex == 2)
+            if (parentCheckBox.Checked)
             {
                 if (string.IsNullOrEmpty(parentMenuDisplayTextBox.Text))
                 {
-                    errorProvider1.SetError(parentMenuDisplayTextBox, "Parent method name can't be empty if exiting back to parent");
-                    errorList.AppendLine("Method name can't be empty");
+                    //errorProvider1.SetError(parentMenuDisplayTextBox, "Parent method name can't be empty if exiting back to parent");
+                    errorList.AppendLine("Parent Menu method can't be empty");
                 }
                 else if (parentMenuDisplayTextBox.Text.Contains(" "))
                 {
-                    errorProvider1.SetError(parentMenuDisplayTextBox, "Parent method name can't contain spaces");
-                    errorList.AppendLine("Method name can't contain spaces");
+                    //errorProvider1.SetError(parentMenuDisplayTextBox, "Parent method name can't contain spaces");
+                    errorList.AppendLine("Parent Menu method can't contain spaces");
                 }
             }
 
@@ -245,18 +247,57 @@ namespace SourceMod_Menu_Generator
 
             var codeBuilder = new StringBuilder();
 
-            codeBuilder.AppendLine("public Plugin:myinfo =").AppendLine("{").AppendLine("\tname = \"Plugin Name\",");
-            codeBuilder.AppendLine("\tauthor = \"Me\",").AppendLine("\tdescription = \"\",").AppendLine("\tversion = \"1.0.0\",");
-            codeBuilder.AppendLine("\turl = \"https://forums.alliedmods.net/\"").AppendLine("}").AppendLine();
-
-            codeBuilder.AppendLine("public OnPluginStart()").AppendLine("{");
-
-            if (translationCheckBox.Checked || nameTranslationCheckBox.Checked)
+            if (pluginCheckBox.Checked)
             {
-                codeBuilder.AppendLine("\tLoadTranslations(\"myplugin.phrases\");").AppendLine();
-            }
+                codeBuilder.AppendLine("public Plugin:myinfo =").AppendLine("{").AppendLine("\tname = \"Plugin Name\",");
+                codeBuilder.AppendLine("\tauthor = \"Me\",").AppendLine("\tdescription = \"\",").AppendLine("\tversion = \"1.0.0\",");
+                codeBuilder.AppendLine("\turl = \"https://forums.alliedmods.net/\"").AppendLine("}").AppendLine();
 
-            codeBuilder.AppendLine("}").AppendLine();
+                codeBuilder.AppendLine("public OnPluginStart()").AppendLine("{");
+
+                codeBuilder.AppendLine("\tLoadTranslations(\"common.phrases\");");
+                if (translationCheckBox.Checked || nameTranslationCheckBox.Checked)
+                {
+                    codeBuilder.AppendLine("\tLoadTranslations(\"myplugin.phrases\");");
+                }
+                codeBuilder.AppendLine();
+
+                Admins admins = (Admins)accessLevelComboBox.SelectedIndex;
+                if (admins == Admins.Everyone)
+                {
+                    codeBuilder.Append("\tRegConsoleCmd(");
+                }
+                else
+                {
+                    codeBuilder.Append("\tRegAdminCmd(");
+                }
+
+                codeBuilder.Append("\"").Append(commandTextBox.Text).Append("\", ").Append("Cmd_").Append(commandTextBox.Text);
+
+                if (admins != Admins.Everyone)
+                {
+                    codeBuilder.Append(", ").Append(admFlags[(int)admins]);
+                }
+
+                if (!string.IsNullOrEmpty(commandDescriptionTextBox.Text))
+                {
+                    codeBuilder.Append(", ").Append("\"").Append(commandDescriptionTextBox.Text).Append("\"");
+                }
+                codeBuilder.AppendLine(")");
+
+                codeBuilder.AppendLine("}").AppendLine();
+
+                codeBuilder.Append("public Action:Cmd_").Append(commandTextBox.Text).AppendLine("(client, args)");
+                codeBuilder.AppendLine("{");
+                codeBuilder.AppendLine("\tif (client == 0)");
+                codeBuilder.AppendLine("\t{");
+                codeBuilder.AppendLine("\t\tReplyToCommand(client, \"%t\", \"Command is in-game only\");");
+                codeBuilder.AppendLine("\t\treturn Plugin_Handled;");
+                codeBuilder.AppendLine("\t}");
+                codeBuilder.Append("\t").Append(methodNameTextBox.Text).AppendLine("(client);");
+                codeBuilder.AppendLine("\treturn Plugin_Handled;");
+                codeBuilder.AppendLine("}").AppendLine();
+            }
 
             // Normally I'd use a List<string>, but we need string.Join
             var actions = new string[10];
@@ -308,6 +349,16 @@ namespace SourceMod_Menu_Generator
             if (!paginationCheckBox.Checked)
             {
                 codeBuilder.AppendLine("\tSetMenuPagination(menu, MENU_NO_PAGINATION);");
+            }
+
+            if (!exitCheckBox.Checked)
+            {
+                codeBuilder.AppendLine("\tSetMenuExitButton(menu, false);");
+            }
+
+            if (parentCheckBox.Checked)
+            {
+                codeBuilder.AppendLine("\tSetMenuExitBackButton(menu, true);");
             }
 
             codeBuilder.AppendLine();
@@ -406,7 +457,7 @@ namespace SourceMod_Menu_Generator
                         codeBuilder.Append("else ");
                     }
                     multiple = true;
-                    codeBuilder.Append("if (StrEqual(item, \"").Append(item.ItemName).AppendLine("\"))").AppendLine("\t\t\t{").AppendLine("\t\t\t\t//Code for item here");
+                    codeBuilder.Append("if (StrEqual(item, \"").Append(item.ItemName).AppendLine("\"))").AppendLine("\t\t\t{").AppendLine("\t\t\t\t//Code for item here").AppendLine();
                     if (itemSelectedComboBox.SelectedIndex == 1)
                     {
                         codeBuilder.AppendLine("\t\t\t\tnew pos = GetMenuSelectionPosition(menu);");
@@ -419,7 +470,7 @@ namespace SourceMod_Menu_Generator
             codeBuilder.AppendLine("\t\t}").AppendLine();
 
             // MenuAction_Cancel
-            if (itemSelectedComboBox.SelectedIndex == 2)
+            if (parentCheckBox.Checked)
             {
                 codeBuilder.Append("\t\tcase ").Append(CANCEL).AppendLine(":").AppendLine("\t\t{");
 
@@ -496,21 +547,12 @@ namespace SourceMod_Menu_Generator
             System.Diagnostics.Process.Start("http://wiki.alliedmods.net/Adding_Admins_%28SourceMod%29#Levels");
         }
 
-        private void itemSelectedComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (itemSelectedComboBox.SelectedIndex == 2)
-            {
-                parentMenuDisplayTextBox.Enabled = true;
-            }
-            else
-            {
-                parentMenuDisplayTextBox.Enabled = false;
-            }
-        }
-
         private void clipboardButton_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(codeTextBox.Text);
+            if (!string.IsNullOrEmpty(codeTextBox.Text))
+            {
+                Clipboard.SetText(codeTextBox.Text);
+            }
         }
 
         private void saveButton_Click(object sender, EventArgs e)
@@ -521,6 +563,34 @@ namespace SourceMod_Menu_Generator
         private void powerlordLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             System.Diagnostics.Process.Start("https://forums.alliedmods.net/member.php?u=38996");
+        }
+
+        private void pluginCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (pluginCheckBox.Checked)
+            {
+                commandTextBox.Enabled = true;
+                commandDescriptionTextBox.Enabled = true;
+                accessLevelComboBox.Enabled = true;
+            }
+            else
+            {
+                commandTextBox.Enabled = false;
+                commandDescriptionTextBox.Enabled = false;
+                accessLevelComboBox.Enabled = false;
+            }
+        }
+
+        private void parentCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (parentCheckBox.Checked)
+            {
+                parentMenuDisplayTextBox.Enabled = true;
+            }
+            else
+            {
+                parentMenuDisplayTextBox.Enabled = false;
+            }
         }
     }
 }
