@@ -464,7 +464,17 @@ namespace SourceMod_Menu_Generator
                     if (itemSelectedComboBox.SelectedIndex == 1)
                     {
                         codeBuilder.AppendLine("\t\t\t\tnew pos = GetMenuSelectionPosition(menu);");
-                        codeBuilder.Append("\t\t\t\tDisplayMenuAtItem(CloneHandle(menu), client, pos, ").Append(menuTimeNumericUpDown.Value).AppendLine(");");
+                        codeBuilder.Append("\t\t\t\tDisplayMenuAtItem(CloneHandle(menu), client, pos, ");
+                        if (menuTimeNumericUpDown.Value == 0)
+                        {
+                            codeBuilder.Append("MENU_TIME_FOREVER");
+                        }
+                        else
+                        {
+                            codeBuilder.Append(menuTimeNumericUpDown.Value);
+                        }
+
+                        codeBuilder.AppendLine(");");
                     }
                     codeBuilder.AppendLine("\t\t\t}");
                 }
