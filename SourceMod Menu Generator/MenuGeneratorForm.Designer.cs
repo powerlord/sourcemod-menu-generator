@@ -48,6 +48,7 @@
             this.parentCheckBox = new System.Windows.Forms.CheckBox();
             this.exitCheckBox = new System.Windows.Forms.CheckBox();
             this.menuTimeGroupBox = new System.Windows.Forms.GroupBox();
+            this.menuTimeNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.menuTimeExampleLabel = new System.Windows.Forms.Label();
             this.parentMenuDisplayTextBox = new System.Windows.Forms.TextBox();
             this.parentMenuLabel = new System.Windows.Forms.Label();
@@ -78,11 +79,11 @@
             this.clipboardButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.menuTimeNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.codeGroupBox.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.menuTimeGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.menuTimeNumericUpDown)).BeginInit();
             this.menuNameGroupBox.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -90,7 +91,6 @@
             this.accessGroupBox.SuspendLayout();
             this.commandDescriptionGroupBox.SuspendLayout();
             this.commandGroupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.menuTimeNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // typeComboBox
@@ -299,6 +299,18 @@
             this.menuTimeGroupBox.TabStop = false;
             this.menuTimeGroupBox.Text = "Display Time";
             // 
+            // menuTimeNumericUpDown
+            // 
+            this.menuTimeNumericUpDown.Location = new System.Drawing.Point(6, 21);
+            this.menuTimeNumericUpDown.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+            this.menuTimeNumericUpDown.Name = "menuTimeNumericUpDown";
+            this.menuTimeNumericUpDown.Size = new System.Drawing.Size(54, 20);
+            this.menuTimeNumericUpDown.TabIndex = 17;
+            // 
             // menuTimeExampleLabel
             // 
             this.menuTimeExampleLabel.AutoSize = true;
@@ -327,6 +339,7 @@
             // 
             // itemSelectedComboBox
             // 
+            this.itemSelectedComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.itemSelectedComboBox.FormattingEnabled = true;
             this.itemSelectedComboBox.Items.AddRange(new object[] {
             "Close menu (default)",
@@ -499,6 +512,7 @@
             // 
             // accessLevelComboBox
             // 
+            this.accessLevelComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.accessLevelComboBox.FormattingEnabled = true;
             this.accessLevelComboBox.Items.AddRange(new object[] {
             "Everyone (default)",
@@ -618,18 +632,6 @@
             // 
             this.saveFileDialog1.Filter = "SourcePawn Files (*.sp)|*.sp";
             // 
-            // menuTimeNumericUpDown
-            // 
-            this.menuTimeNumericUpDown.Location = new System.Drawing.Point(6, 21);
-            this.menuTimeNumericUpDown.Maximum = new decimal(new int[] {
-            9999,
-            0,
-            0,
-            0});
-            this.menuTimeNumericUpDown.Name = "menuTimeNumericUpDown";
-            this.menuTimeNumericUpDown.Size = new System.Drawing.Size(54, 20);
-            this.menuTimeNumericUpDown.TabIndex = 17;
-            // 
             // MenuGeneratorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -651,6 +653,7 @@
             this.tabPage1.PerformLayout();
             this.menuTimeGroupBox.ResumeLayout(false);
             this.menuTimeGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.menuTimeNumericUpDown)).EndInit();
             this.menuNameGroupBox.ResumeLayout(false);
             this.menuNameGroupBox.PerformLayout();
             this.tabPage2.ResumeLayout(false);
@@ -665,7 +668,6 @@
             this.commandDescriptionGroupBox.PerformLayout();
             this.commandGroupBox2.ResumeLayout(false);
             this.commandGroupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.menuTimeNumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
